@@ -4,7 +4,10 @@ import sqlite3
 
 
 def words(text):
-    return set(re.findall(r"\w+", text.casefold()))
+    return set(re.findall(r"\w+", text.casefold())) - {
+        "the", "a", "an", "is", "are", "where", "what", "of", "to", "in",
+        "and", "can", "you", "me", "it", "i", "do", "did", "we", "about",
+    }
 
 
 class Memory:
